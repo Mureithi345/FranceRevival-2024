@@ -19,6 +19,6 @@ function updateSlideshow() {
 slideshowElements.forEach(img => img.style.display = 'none');
 slideshowElements[0].style.display = 'block';
 
-// Change image every 3 seconds (3000ms)
-setInterval(updateSlideshow, 3000);
+// Change image every 10 seconds (10000ms)
+setInterval(updateSlideshow, 10000);
 
