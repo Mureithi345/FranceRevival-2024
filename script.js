@@ -14,4 +14,4 @@ function updateSlideshow() {
 }
 
 // Change image every 10 seconds (adjust as needed)
-setInterval(updateSlideshow, 10000);
+setInterval(updateSlideshow);
