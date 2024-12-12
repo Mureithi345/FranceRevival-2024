@@ -1,17 +1,24 @@
 // Array of image paths
 const images = [
-    "Slide-1.jpg","Slide-2.jpg", "Slide-3.jpg", "Slide-4.jpg", "Slide-5.jpg",
+    "Slide-1.jpg", "Slide-2.jpg", "Slide-3.jpg", "Slide-4.jpg", "Slide-5.jpg",
     "Slide-6.jpg", "Slide-7.jpg", "Slide-8.jpg",
 ];
 
 let currentIndex = 0; // Track the current image index
-const slideshow = document.getElementById('slideshow');
+const slideshowElements = document.querySelectorAll('.slideshow'); // Get all images with the class 'slideshow'
 
-// Function to update the image
 function updateSlideshow() {
-    currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
-    slideshow.src = images[currentIndex];
+    // Update the src of the first image in the 'slideshow' class group
+    slideshowElements.forEach(img => img.style.display = 'none'); // Hide all images
+    slideshowElements[currentIndex].style.display = 'block'; // Show the current image
+
+    currentIndex = (currentIndex + 1) % slideshowElements.length; // Loop back to the first image
 }
 
-// Change image every 10 seconds (adjust as needed)
-setInterval(updateSlideshow, 1000);
+// Initially hide all images except the first
+slideshowElements.forEach(img => img.style.display = 'none');
+slideshowElements[0].style.display = 'block';
+
+// Change image every 3 seconds (3000ms)
+setInterval(updateSlideshow, 3000);
+
